@@ -25,6 +25,7 @@ final class GameLogic: GameLogicProtocol {
         let gameDetailsURL = Constants.baseURL + "/\(gameID)" + "?key=" + Constants.apiKey
         var urlRequest = URLRequest(url: URL(string: gameDetailsURL)!)
         urlRequest.httpMethod = gameDetailsRequest.method.rawValue
+        
         do {
             urlRequest = try gameDetailsRequest.encoding.encode(urlRequest, with: gameDetailsRequest.parameters)
         } catch {

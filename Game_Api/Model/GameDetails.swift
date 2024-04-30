@@ -11,13 +11,10 @@ struct GameDetails: Decodable {
     
     let results: [GameDetailsResult]?
     let description: String?
-    //   let page: Int // totalPages, totalResults: Int
     
     enum CodingKeys: String, CodingKey {
-        case results//, page
+        case results
         case description
-        // case totalResults = "total_results"
-        // case totalPages = "total_pages"
     }
 }
 

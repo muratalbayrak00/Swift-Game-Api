@@ -138,7 +138,6 @@
                     <tabBar key="tabBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="uAc-Ps-XWY">
                         <rect key="frame" x="0.0" y="0.0" width="1000" height="1000"/>
                         <autoresizingMask key="autoresizingMask"/>
-                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <color key="selectedImageTintColor" systemColor="labelColor"/>
                     </tabBar>
                     <connections>
@@ -261,7 +260,7 @@
                         <outlet property="imageView" destination="AUO-dG-dlq" id="O3S-Zo-ckE"/>
                         <outlet property="metacriticRateLabel" destination="hqa-Jw-pcI" id="a8K-Mh-W1R"/>
                         <outlet property="nameLabel" destination="5aQ-OH-09T" id="qPa-In-oQx"/>
-                        <outlet property="raleasedDateLabel" destination="r3c-w7-Ko7" id="LdO-jv-6sJ"/>
+                        <outlet property="releasedDateLabel" destination="r3c-w7-Ko7" id="CFa-2S-kxX"/>
                         <outlet property="scrollView" destination="fJc-KJ-87y" id="MQv-6m-vPg"/>
                     </connections>
                 </viewController>

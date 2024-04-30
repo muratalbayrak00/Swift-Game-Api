@@ -15,6 +15,11 @@ class GameViewController: UIViewController {
     
     let searchController = UISearchController(searchResultsController: nil)
     
+    var gameList = [ListGamesResult]()
+    var remainingGames = [ListGamesResult]()
+    var topGameList = [ListGamesResult]()
+    lazy var filteredGames = [ListGamesResult]()
+    
     var isSearchBarEmpty: Bool {
         return searchController.searchBar.text?.isEmpty ?? true
     }
@@ -22,10 +27,6 @@ class GameViewController: UIViewController {
     var isFiltering: Bool {
         return searchController.isActive && !isSearchBarEmpty
     }
-    
-    var gameList = [ListGamesResult]()
-    var remainingGames = [ListGamesResult]()
-    var topGameList = [ListGamesResult]()
     
     let photo1ImageView: UIImageView = UIImageView()
     let photo2ImageView: UIImageView = UIImageView()
@@ -69,9 +70,17 @@ class GameViewController: UIViewController {
         
     }
     
+    private func filterContextForSearchtext(_ searchText: String) {
+        filteredGames = gameList.filter({ game -> Bool in
+            return game.name?.lowercased().contains(searchText.lowercased()) ?? false
+        })
+        
+        collectionView.reloadData()
+    }
+    
     private func configureSearchController() {
         
-        searchController.searchBar.placeholder = "Search User"
+        searchController.searchBar.placeholder = "Search Game"
         searchController.searchResultsUpdater = self
         searchController.obscuresBackgroundDuringPresentation = true
         navigationItem.searchController = searchController
@@ -168,7 +177,9 @@ class GameViewController: UIViewController {
         }
     }
     
+    
 }
+
 protocol GameViewControllerProtocol {
     func loadMovieListCollectionView()
 }
@@ -176,13 +187,20 @@ protocol GameViewControllerProtocol {
 extension GameViewController: UICollectionViewDelegate, UICollectionViewDataSource{
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        remainingGames.count
+        if isFiltering {
+            return filteredGames.count
+        }
+        return remainingGames.count
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "gameCell", for: indexPath) as! GameCell
         
-        cell.configure(model: remainingGames[indexPath.row])
+        if isFiltering {
+            cell.configure(model: filteredGames[indexPath.row])
+        } else {
+            cell.configure(model: remainingGames[indexPath.row])
+        }
         
         return cell
     }
@@ -198,9 +216,58 @@ extension GameViewController: UICollectionViewDelegate, UICollectionViewDataSour
     
 }
 
-extension GameViewController: UISearchResultsUpdating {
+extension GameViewController: UISearchBarDelegate, UISearchResultsUpdating, UISearchControllerDelegate {
+    
     func updateSearchResults(for searchController: UISearchController) {
-        let searchBar = searchController.searchBar
-        //filterContextForSearchtext(searchBar.text!)
+        guard let searchText = searchController.searchBar.text else { return }
+        // TODO: guard searchText.count >= 3 else { return }
+        
+        filterContextForSearchtext(searchText)
+        checkEmptySearch()
+    }
+    
+    func searchBarCancelButtonClicked(_ searchBar: UISearchBar) {
+        clearFilteredGames()
+        checkEmptySearch()
+    }
+    
+    private func clearFilteredGames() {
+        filteredGames.removeAll()
+        collectionView.reloadData()
+    }
+    
+    func checkEmptySearch() {
+        
+        if isFiltering && filteredGames.isEmpty {
+            collectionView.isHidden = true
+            scrollView.isHidden = true
+            showEmptySearchMessage()
+        } else {
+            collectionView.isHidden = false
+            scrollView.isHidden = false
+            removeEmptySearchMessage()
+        }
+        
+    }
+    
+    func showEmptySearchMessage() {
+        let message = UILabel(frame: CGRect(x: 0, y: 0, width: view.bounds.size.width, height: view.bounds.size.height))
+        message.text = "Sorry, the game you are looking for could not be found!"
+        message.textColor = .black
+        message.numberOfLines = 0
+        message.textAlignment = .center
+        message.font = UIFont(name: "HelveticaNeue", size: 20)
+        message.sizeToFit()
+        message.center = view.center
+        view.addSubview(message)
+        view.bringSubviewToFront(message)
+    }
+    
+    func removeEmptySearchMessage() {
+        for subview in view.subviews {
+            if let message = subview as? UILabel,  message.text == "Sorry, the game you are looking for could not be found!" {
+                message.removeFromSuperview()
+            }
+        }
     }
 }

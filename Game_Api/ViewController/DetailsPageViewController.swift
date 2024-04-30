@@ -9,22 +9,13 @@ import Foundation
 import UIKit
 import Kingfisher
 
-
-/*
-
- [] search filter yap
- [] 20 den falza oyun gosterebilmeyi yap
-
- */
-
-
 class DetailsPageViewController: UIViewController {
     
     @IBOutlet weak var imageView: UIImageView!
     @IBOutlet weak var nameLabel: UILabel!
-    @IBOutlet weak var raleasedDateLabel: UILabel!
     @IBOutlet weak var metacriticRateLabel: UILabel!
     @IBOutlet weak var descriptionLabel: UILabel!
+    @IBOutlet weak var releasedDateLabel: UILabel!
     @IBOutlet weak var favoriteIcon: UIImageView!
     @IBOutlet weak var scrollView: UIScrollView!
     
@@ -32,7 +23,7 @@ class DetailsPageViewController: UIViewController {
     var gameDescription: String?
     
     var gameDetails = [GameDetailsResult]()
-    var  selectedGame: ListGamesResult
+    var selectedGame: ListGamesResult
     var favoriteGames: [ListGamesResult] = []
     
     init(selectedGame: ListGamesResult) {
@@ -48,8 +39,8 @@ class DetailsPageViewController: UIViewController {
     func configure(model: ListGamesResult, description: String) {
         
         nameLabel.text = model.name
-        raleasedDateLabel.text = model.released
-        metacriticRateLabel.text = "\(model.metacritic ?? 0)"
+        releasedDateLabel.text = "Released : " + (model.released ?? "")
+        metacriticRateLabel.text = "Metacritic: \(model.metacritic ?? 0)"
         descriptionLabel.text = description.removeHTMLTags()
         
         guard let imageUrl = model.imageUrl, let url = URL(string: imageUrl) else {
@@ -63,7 +54,6 @@ class DetailsPageViewController: UIViewController {
         
         scrollView.contentSize = CGSize(width: scrollView.frame.width, height: descriptionLabel.frame.height)
     }
-    
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
@@ -104,7 +94,6 @@ class DetailsPageViewController: UIViewController {
         }
         
     }
-    
     
     @objc func imageTap() {
         

@@ -10,14 +10,10 @@ import Foundation
 struct ListGames: Decodable {
     
     let results: [ListGamesResult]?
-    //   let page: Int // totalPages, totalResults: Int
     
     enum CodingKeys: String, CodingKey {
-        case results//, page
-        //        case totalResults = "total_results"
-        //        case totalPages = "total_pages"
+        case results
     }
-    
 }
 
 struct ListGamesResult: Decodable, Encodable {
