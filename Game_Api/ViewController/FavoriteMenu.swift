@@ -26,6 +26,7 @@ class FavoriteMenu: UIViewController {
             if favoriteGames.isEmpty && view.viewWithTag(999) == nil {
                 let emptyLabel = UILabel(frame: CGRect(x: 0, y: 0, width: collectionView.bounds.size.width, height: collectionView.bounds.size.height))
                 emptyLabel.text = "Oops! You haven't\nadded any games\nto your favorites yet."
+                emptyLabel.textAlignment = .center
                 emptyLabel.numberOfLines = 0
                 emptyLabel.tag = 999
                 collectionView.backgroundView = emptyLabel
@@ -45,6 +46,7 @@ class FavoriteMenu: UIViewController {
 }
 
 extension FavoriteMenu: UICollectionViewDelegate, UICollectionViewDataSource {
+    
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         favoriteGames.count
     }

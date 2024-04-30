@@ -19,7 +19,6 @@ struct GameDetails: Decodable {
         // case totalResults = "total_results"
         // case totalPages = "total_pages"
     }
-    
 }
 
 struct GameDetailsResult: Decodable {

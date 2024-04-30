@@ -19,7 +19,7 @@ class GameCell: UICollectionViewCell {
         let releasedText = model.released ?? ""
         let ratingText = model.rating.map { "\($0) ⭐️" } ?? ""
         ratingReleasedLabel.text = "\(ratingText)              \(releasedText)"
-        guard var imageUrl = model.imageUrl else { return }
+        guard let imageUrl = model.imageUrl else { return }
         guard let url = URL(string: imageUrl) else { return }
         gameImage.kf.setImage(with: url)
     }

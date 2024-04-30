@@ -11,20 +11,10 @@ import Kingfisher
 
 
 /*
- -- yapilacaklar --
- [x] star isini hallet
- [x] favorite bolumunu yap
- [x] topgameliste tiklandiginda detailsviewi ac
- [x] alttaki bottom controllerdaki simgeyi degistir
- [x] private final keywordlerine dikkat et
- [x] ui tasarimi duzenle
+
  [] search filter yap
  [] 20 den falza oyun gosterebilmeyi yap
- [] yorum satirlarini sil
- [] githuba koy
- [] readme ekle
- 
- 
+
  */
 
 
