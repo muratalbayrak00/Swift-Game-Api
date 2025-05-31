@@ -8,6 +8,7 @@
 import Alamofire
 import Foundation
 
+
 final class Webservice {
     
     static let shared: Webservice = {

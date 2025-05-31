@@ -79,7 +79,6 @@ class GameViewController: UIViewController {
     }
     
     private func configureSearchController() {
-        
         searchController.searchBar.placeholder = "Search Game"
         searchController.searchResultsUpdater = self
         searchController.obscuresBackgroundDuringPresentation = true

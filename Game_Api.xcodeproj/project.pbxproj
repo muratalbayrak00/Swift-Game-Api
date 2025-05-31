@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		D62504972BF9801600144A9E /* Alamofire in Frameworks */ = {isa = PBXBuildFile; productRef = D62504962BF9801600144A9E /* Alamofire */; };
 		D65067FB2BD93FCC0020DC2F /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D65067FA2BD93FCC0020DC2F /* AppDelegate.swift */; };
 		D65067FD2BD93FCC0020DC2F /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D65067FC2BD93FCC0020DC2F /* SceneDelegate.swift */; };
 		D65067FF2BD93FCC0020DC2F /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D65067FE2BD93FCC0020DC2F /* ViewController.swift */; };
@@ -16,18 +17,29 @@
 		D650680A2BD93FDA0020DC2F /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D65068082BD93FDA0020DC2F /* LaunchScreen.storyboard */; };
 		D673B6552BDC02530011E541 /* GameCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D673B6542BDC02530011E541 /* GameCell.swift */; };
 		D673B6572BDC08B40011E541 /* GameViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D673B6562BDC08B40011E541 /* GameViewController.swift */; };
-		D673B65A2BDC3A700011E541 /* Kingfisher in Frameworks */ = {isa = PBXBuildFile; productRef = D673B6592BDC3A700011E541 /* Kingfisher */; };
 		D673B65E2BDC52980011E541 /* FavoriteMenu.swift in Sources */ = {isa = PBXBuildFile; fileRef = D673B65D2BDC52980011E541 /* FavoriteMenu.swift */; };
 		D6B334D22BD940DD00E0967F /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = D6B334D12BD940DD00E0967F /* Constants.swift */; };
 		D6B334D52BD9A0D100E0967F /* Webservice.swift in Sources */ = {isa = PBXBuildFile; fileRef = D6B334D42BD9A0D100E0967F /* Webservice.swift */; };
-		D6B334D82BD9A69300E0967F /* Alamofire in Frameworks */ = {isa = PBXBuildFile; productRef = D6B334D72BD9A69300E0967F /* Alamofire */; };
-		D6B334DA2BD9A69300E0967F /* AlamofireDynamic in Frameworks */ = {isa = PBXBuildFile; productRef = D6B334D92BD9A69300E0967F /* AlamofireDynamic */; };
 		D6B334DC2BD9B91500E0967F /* GameLogic.swift in Sources */ = {isa = PBXBuildFile; fileRef = D6B334DB2BD9B91500E0967F /* GameLogic.swift */; };
 		D6B334DF2BD9B96700E0967F /* ListGames.swift in Sources */ = {isa = PBXBuildFile; fileRef = D6B334DE2BD9B96700E0967F /* ListGames.swift */; };
 		D6B334E12BD9B97100E0967F /* GameDetails.swift in Sources */ = {isa = PBXBuildFile; fileRef = D6B334E02BD9B97100E0967F /* GameDetails.swift */; };
 		D6B334E32BD9BB5100E0967F /* Router.swift in Sources */ = {isa = PBXBuildFile; fileRef = D6B334E22BD9BB5100E0967F /* Router.swift */; };
 		D6B334EB2BD9DA5900E0967F /* DetailsPageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D6B334EA2BD9DA5900E0967F /* DetailsPageViewController.swift */; };
+		D6EEF5392BF979660097E8D9 /* Kingfisher in Frameworks */ = {isa = PBXBuildFile; productRef = D6EEF5382BF979660097E8D9 /* Kingfisher */; };
 /* End PBXBuildFile section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		D69EB4F72BE1CAE700ACD77D /* Embed Frameworks */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 10;
+			files = (
+			);
+			name = "Embed Frameworks";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
 		D65067F72BD93FCC0020DC2F /* Game_Api.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Game_Api.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -56,9 +68,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				D673B65A2BDC3A700011E541 /* Kingfisher in Frameworks */,
-				D6B334D82BD9A69300E0967F /* Alamofire in Frameworks */,
-				D6B334DA2BD9A69300E0967F /* AlamofireDynamic in Frameworks */,
+				D6EEF5392BF979660097E8D9 /* Kingfisher in Frameworks */,
+				D62504972BF9801600144A9E /* Alamofire in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -70,6 +81,7 @@
 			children = (
 				D65067F92BD93FCC0020DC2F /* Game_Api */,
 				D65067F82BD93FCC0020DC2F /* Products */,
+				D69EB4F82BE1CB0F00ACD77D /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -99,6 +111,13 @@
 				D65068032BD93FCC0020DC2F /* Game_Api.xcdatamodeld */,
 			);
 			path = Game_Api;
+			sourceTree = "<group>";
+		};
+		D69EB4F82BE1CB0F00ACD77D /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = Frameworks;
 			sourceTree = "<group>";
 		};
 		D6B334D32BD9A0A400E0967F /* Network */ = {
@@ -156,6 +175,7 @@
 				D65067F32BD93FCC0020DC2F /* Sources */,
 				D65067F42BD93FCC0020DC2F /* Frameworks */,
 				D65067F52BD93FCC0020DC2F /* Resources */,
+				D69EB4F72BE1CAE700ACD77D /* Embed Frameworks */,
 			);
 			buildRules = (
 			);
@@ -163,9 +183,8 @@
 			);
 			name = Game_Api;
 			packageProductDependencies = (
-				D6B334D72BD9A69300E0967F /* Alamofire */,
-				D6B334D92BD9A69300E0967F /* AlamofireDynamic */,
-				D673B6592BDC3A700011E541 /* Kingfisher */,
+				D6EEF5382BF979660097E8D9 /* Kingfisher */,
+				D62504962BF9801600144A9E /* Alamofire */,
 			);
 			productName = Game_Api;
 			productReference = D65067F72BD93FCC0020DC2F /* Game_Api.app */;
@@ -198,6 +217,7 @@
 			packageReferences = (
 				D6B334D62BD9A69300E0967F /* XCRemoteSwiftPackageReference "Alamofire" */,
 				D673B6582BDC3A6F0011E541 /* XCRemoteSwiftPackageReference "Kingfisher" */,
+				D6EEF52D2BF977F50097E8D9 /* XCRemoteSwiftPackageReference "SDWebImage" */,
 			);
 			productRefGroup = D65067F82BD93FCC0020DC2F /* Products */;
 			projectDirPath = "";
@@ -391,6 +411,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = ZN3LX5MVT8;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = Game_Api/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
@@ -403,11 +424,11 @@
 					"@executable_path/Frameworks",
 				);
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = "com.muratalbayrak.Game-Api";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.muratalbayrak.Game-Api2";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Debug;
 		};
@@ -418,6 +439,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = ZN3LX5MVT8;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = Game_Api/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
@@ -430,11 +452,11 @@
 					"@executable_path/Frameworks",
 				);
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = "com.muratalbayrak.Game-Api";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.muratalbayrak.Game-Api2";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Release;
 		};
@@ -478,23 +500,26 @@
 				minimumVersion = 5.9.1;
 			};
 		};
+		D6EEF52D2BF977F50097E8D9 /* XCRemoteSwiftPackageReference "SDWebImage" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/SDWebImage/SDWebImage";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 5.19.2;
+			};
+		};
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
-		D673B6592BDC3A700011E541 /* Kingfisher */ = {
-			isa = XCSwiftPackageProductDependency;
-			package = D673B6582BDC3A6F0011E541 /* XCRemoteSwiftPackageReference "Kingfisher" */;
-			productName = Kingfisher;
-		};
-		D6B334D72BD9A69300E0967F /* Alamofire */ = {
+		D62504962BF9801600144A9E /* Alamofire */ = {
 			isa = XCSwiftPackageProductDependency;
 			package = D6B334D62BD9A69300E0967F /* XCRemoteSwiftPackageReference "Alamofire" */;
 			productName = Alamofire;
 		};
-		D6B334D92BD9A69300E0967F /* AlamofireDynamic */ = {
+		D6EEF5382BF979660097E8D9 /* Kingfisher */ = {
 			isa = XCSwiftPackageProductDependency;
-			package = D6B334D62BD9A69300E0967F /* XCRemoteSwiftPackageReference "Alamofire" */;
-			productName = AlamofireDynamic;
+			package = D673B6582BDC3A6F0011E541 /* XCRemoteSwiftPackageReference "Kingfisher" */;
+			productName = Kingfisher;
 		};
 /* End XCSwiftPackageProductDependency section */
 
